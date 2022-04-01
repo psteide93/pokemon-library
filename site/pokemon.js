@@ -16,14 +16,33 @@ function addPokemonImage(pokemon) {
     ul.append(div)
 }
 
+// function abilityReducer(pokemon){
+//     pokemon.abilities.reduce(function (onlyAbilities, pokemon){
+//         return [...onlyAbilities, pokemon.ability,]
+//     }, []);
+
+// }
+
 function addPokemonDetail(pokemon){
-    const ul = document.createElement("ul")
+     const ul = document.createElement("ul")
     ul.classList.add("abilities")
     pokemon.abilities.map(ability => {
         const li=document.createElement("li")
         li.innerHTML = `
-            <span class = "ability-name">${ability.name}</span>
-            <span class = "ability-short-description">Ability short descirp</span>
+            <span class = "ability-name">${ability.ability.name}</span>
+            <span class = "ability-short-description">
+                ${
+                    fetch(ability.ability.url)
+                        .then(response =>{
+                           return response.json()
+                }).then(parsedResponse => {
+                    parsedResponse.flavor_text_entries.map(flavor_text_entries => {
+                        const result = flavor_text_entries.flavor_text
+                        console.log((result))
+                        return(result)
+                    }) 
+                })}     
+            </span>
         `
         ul.append(li)
         console.log( li)
