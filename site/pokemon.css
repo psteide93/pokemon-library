@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --pokeRed: hsl(350, 91%, 45%);
+    --pokeBlu: hsl(203, 98%, 57%);
+    --pokeGreen: hsl(129, 36%, 50%);
+    --pokeYellow: hsl(48, 100%, 50%);
+}
+
 h1 a {
     text-decoration: none;
-    color: black;
+    font-size: 80px;
+    color: orange;
 }
 
 h1 a:hover {
@@ -8,11 +18,12 @@ h1 a:hover {
 }
 
 main {
-    margin: 175px;
+    margin: 50px;
     border-style: solid;
     border-width: 48px;
     background-color: lightgrey;
     position: relative;
+    font-family: 'Lato', sans-serif;
 }
 
 h2 {
@@ -48,6 +59,8 @@ body {
 
 } */
 
-li span{
+li span {
     display: block;
 }
+
+.abilty-name: {}

@@ -2,7 +2,9 @@ const app = document.querySelector("#app")
 const ul = document.querySelector("ul")
 const div = document.querySelector("div")
 
-
+function NameUpperCase(name) {
+    return name.charAt(0).toUpperCase() + name.slice(1)
+}
 
 function addPokemonImage(pokemon) {
     const div = document.createElement("div")
@@ -16,41 +18,27 @@ function addPokemonImage(pokemon) {
     ul.append(div)
 }
 
-// function abilityReducer(pokemon){
-//     pokemon.abilities.reduce(function (onlyAbilities, pokemon){
-//         return [...onlyAbilities, pokemon.ability,]
-//     }, []);
-
-// }
-
-function addPokemonDetail(pokemon){
-     const ul = document.createElement("ul")
+function addPokemonDetail(pokemon) {
+    const ul = document.createElement("ul")
     ul.classList.add("abilities")
     pokemon.abilities.map(ability => {
-        const li=document.createElement("li")
-        li.innerHTML = `
-            <span class = "ability-name">${NameUpperCase(ability.ability.name)}</span>
-            <span class = "ability-short-description">
-                ${
-                    fetch(ability.ability.url)
-                        .then(response =>{
-                           return response.json()
-                }).then(parsedResponse => {
-                    parsedResponse.flavor_text_entries.map(flavor_text_entries => {const result = flavor_text_entries.flavor_text;
-                        console.log((result));
-                        return(result);
-                    })
+        fetch(ability.ability.url)
+            .then(response => {
+                return response.json()
+            }).then(parsedResponse => {
+                const flavor_text = parsedResponse.flavor_text_entries
+                    .find(flavor_text_entry => flavor_text_entry.language.name === "en")
+                const li = document.createElement("li")
+                li.innerHTML = `
+                        <span class = "ability-name">${NameUpperCase(ability.ability.name)}</span>
+                        <span class = "ability-short-description">${flavor_text.flavor_text}</span>
+                    `
+                ul.append(li)
+            })
 
-                })}     
-            </span>
-        `
-        ul.append(li)
-        console.log( li)
+        div.append(ul)
     })
-
-    div.append(ul)
- }
-
+}
 
 const url = new URL(window.location)
 const queryString = new URLSearchParams(url.search)
@@ -58,11 +46,6 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
     .then(response => {
         return response.json()
     }).then(parsedResponse => {
-        console.log(parsedResponse)
         addPokemonImage(parsedResponse)
         addPokemonDetail(parsedResponse)
     })
-
-function NameUpperCase(name) {
-    return name.charAt(0).toUpperCase() + name.slice(1)
-}

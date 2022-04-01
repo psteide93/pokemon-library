@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --pokeRed: hsl(350, 91%, 45%);
+    --pokeBlu: hsl(203, 98%, 57%);
+    --pokeGreen: hsl(129, 36%, 50%);
+    --pokeYellow: hsl(48, 100%, 50%);
+}
+
 h1 a{
 font-size: 80px;
-color: orange;
+color: var(--pokeYellow);
 text-decoration: none;
 }
 
@@ -18,8 +27,8 @@ main{
 
 h2{
     font-size: 40px;
-    color: orange;
-    background-color: red;
+    color: var(--pokeYellow);
+    background-color: var(--pokeRed);
     text-align: center;
 }
 
@@ -37,7 +46,7 @@ h2{
 
 body{
 
-    background-color: red;
+    background-color: var(--pokeRed);
 }
 
 
@@ -49,7 +58,7 @@ div{
 
 figure a{
     text-decoration: none;
-    color: black;
+    color: var(--;
     font-weight: bold;
 }
 
