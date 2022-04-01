@@ -1,5 +1,6 @@
 const app = document.querySelector("#app")
 const ul = document.querySelector("ul")
+const div = document.querySelector("div")
 
 
 
@@ -16,11 +17,20 @@ function addPokemonImage(pokemon) {
 }
 
 function addPokemonDetail(pokemon){
-    
-    
+    const ul = document.createElement("ul")
+    ul.classList.add("abilities")
+    pokemon.abilities.map(ability => {
+        const li=document.createElement("li")
+        li.innerHTML = `
+            <span class = "ability-name">${ability.name}</span>
+            <span class = "ability-short-description">Ability short descirp</span>
+        `
+        ul.append(li)
+        console.log( li)
+    })
 
-
-}
+    div.append(ul)
+ }
 
 
 const url = new URL(window.location)
@@ -29,7 +39,9 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
     .then(response => {
         return response.json()
     }).then(parsedResponse => {
+        console.log(parsedResponse)
         addPokemonImage(parsedResponse)
+        addPokemonDetail(parsedResponse)
     })
 
 function pokeNameUpperCase(name) {

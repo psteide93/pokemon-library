@@ -23,7 +23,7 @@ h2{
     text-align: center;
 }
 
-h2::before{
+/* h2::before{
     content: " ";
     background-color: grey;
     position: absolute;
@@ -33,7 +33,7 @@ h2::before{
     height: 34px;
 
 
-}
+} */
 
 body{
 
