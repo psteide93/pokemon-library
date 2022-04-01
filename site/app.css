@@ -3,26 +3,30 @@
 :root {
     --pokeRed: hsl(350, 91%, 45%);
     --pokeBlu: hsl(203, 98%, 57%);
-    --pokeGreen: hsl(129, 36%, 50%);
     --pokeYellow: hsl(48, 100%, 50%);
+    --pokeGrey: hsl(0, 0%, 87%);
 }
 
 h1 a{
 font-size: 80px;
 color: var(--pokeYellow);
 text-decoration: none;
+font-weight: bold;
 }
 
 h1 a:hover{
     text-decoration: underline;
+
 }
 
 main{
     margin: 50px;
     border-style:solid;
-    border-width: 48px;
-    background-color: lightgrey;
+    border-width: 19px;
+    border-color:var(--pokeBlu);
+    background-color: var(--pokeGrey);
     position: relative;
+    font-family: 'Lato', sans-serif;
 }
 
 h2{
@@ -30,11 +34,12 @@ h2{
     color: var(--pokeYellow);
     background-color: var(--pokeRed);
     text-align: center;
+    padding-top: none;
 }
 
-/* h2::before{
+ h2::before{
     content: " ";
-    background-color: grey;
+    background-color: var(--pokeRed);
     position: absolute;
     width: 100%;
     top: 0;
@@ -42,7 +47,7 @@ h2{
     height: 34px;
 
 
-} */
+}
 
 body{
 
@@ -58,7 +63,7 @@ div{
 
 figure a{
     text-decoration: none;
-    color: var(--;
+    color: var(--pokeBlu);
     font-weight: bold;
 }
 

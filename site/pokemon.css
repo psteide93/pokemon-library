@@ -3,64 +3,89 @@
 :root {
     --pokeRed: hsl(350, 91%, 45%);
     --pokeBlu: hsl(203, 98%, 57%);
-    --pokeGreen: hsl(129, 36%, 50%);
     --pokeYellow: hsl(48, 100%, 50%);
+    --pokeGrey: hsl(0, 0%, 87%);
 }
 
 h1 a {
-    text-decoration: none;
     font-size: 80px;
-    color: orange;
+    color: var(--pokeYellow);
+    text-decoration: none;
+    font-weight: bold;
 }
 
 h1 a:hover {
     text-decoration: underline;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 main {
     margin: 50px;
+    width: 300px;
     border-style: solid;
-    border-width: 48px;
-    background-color: lightgrey;
+    border-width: 19px;
+    border-color: var(--pokeBlu);
+    background-color: var(--pokeGrey);
     position: relative;
     font-family: 'Lato', sans-serif;
 }
 
 h2 {
     font-size: 40px;
-    color: orange;
-    background-color: red;
+    color: var(--pokeYellow);
+    background-color: var(--pokeRed);
     text-align: center;
+    padding-top: none;
+    margin-bottom: none;
 }
 
-/* h2::before {
+h2::before {
     content: " ";
-    background-color: grey;
+    background-color: var(--pokeRed);
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
     height: 34px;
-
-
-} */
+}
 
 body {
 
-    background-color: red;
+    background-color: var(--pokeRed);
 }
 
 
-/* div {
+.pokemon {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
 
-} */
+}
 
 li span {
     display: block;
 }
 
-.abilty-name: {}
+.pokemon figcaption {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.abilities ul li{
+    list-style: none
+}
+
+.ability-name {
+    font-weight: bold;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    list-style: none
+}
