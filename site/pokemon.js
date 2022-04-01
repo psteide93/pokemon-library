@@ -10,7 +10,7 @@ function addPokemonImage(pokemon) {
     div.innerHTML = `   
     <figure>
         <img src= "${pokemon.sprites.front_default}" alt = "${pokemon.name}"/>
-        <figcaption>${pokeNameUpperCase(pokemon.name)}</figcaption>
+        <figcaption>${NameUpperCase(pokemon.name)}</figcaption>
     </figure>
     `
     ul.append(div)
@@ -29,18 +29,18 @@ function addPokemonDetail(pokemon){
     pokemon.abilities.map(ability => {
         const li=document.createElement("li")
         li.innerHTML = `
-            <span class = "ability-name">${ability.ability.name}</span>
+            <span class = "ability-name">${NameUpperCase(ability.ability.name)}</span>
             <span class = "ability-short-description">
                 ${
                     fetch(ability.ability.url)
                         .then(response =>{
                            return response.json()
                 }).then(parsedResponse => {
-                    parsedResponse.flavor_text_entries.map(flavor_text_entries => {
-                        const result = flavor_text_entries.flavor_text
-                        console.log((result))
-                        return(result)
-                    }) 
+                    parsedResponse.flavor_text_entries.map(flavor_text_entries => {const result = flavor_text_entries.flavor_text;
+                        console.log((result));
+                        return(result);
+                    })
+
                 })}     
             </span>
         `
@@ -63,6 +63,6 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
         addPokemonDetail(parsedResponse)
     })
 
-function pokeNameUpperCase(name) {
+function NameUpperCase(name) {
     return name.charAt(0).toUpperCase() + name.slice(1)
 }
