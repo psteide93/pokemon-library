@@ -70,3 +70,11 @@ figure a{
 figure a:hover{
     color: red;
 }   
+
+.pokemon{
+    padding-right: 40px;
+}
+
+.hidden{
+    display: none;
+}
