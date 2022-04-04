@@ -20,6 +20,7 @@ h1 a:hover{
 }
 
 main{
+
     margin: 50px;
     border-style:solid;
     border-width: 19px;
@@ -44,10 +45,9 @@ h2{
     width: 100%;
     top: 0;
     left: 0;
-    height: 34px;
-
-
+    height: 35px;
 }
+
 
 body{
 
@@ -73,7 +73,13 @@ figure a:hover{
 
 .pokemon{
     padding-right: 40px;
+    margin-left: 50px;
 }
+
+.spinner{
+    width: 100%
+}
+
 
 .hidden{
     display: none;
