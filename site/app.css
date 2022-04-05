@@ -7,30 +7,28 @@
     --pokeGrey: hsl(0, 0%, 87%);
 }
 
-h1 a{
-font-size: 80px;
-color: var(--pokeYellow);
-text-decoration: none;
-font-weight: bold;
+h1 a {
+    font-size: 80px;
+    color: var(--pokeYellow);
+    text-decoration: none;
+    font-weight: bold;
 }
 
-h1 a:hover{
+h1 a:hover {
     text-decoration: underline;
-
 }
 
-main{
-
+main {
     margin: 50px;
-    border-style:solid;
+    border-style: solid;
     border-width: 19px;
-    border-color:var(--pokeBlu);
+    border-color: var(--pokeBlu);
     background-color: var(--pokeGrey);
     position: relative;
     font-family: 'Lato', sans-serif;
 }
 
-h2{
+h2 {
     font-size: 40px;
     color: var(--pokeYellow);
     background-color: var(--pokeRed);
@@ -38,7 +36,7 @@ h2{
     padding-top: none;
 }
 
- h2::before{
+h2::before {
     content: " ";
     background-color: var(--pokeRed);
     position: absolute;
@@ -49,38 +47,35 @@ h2{
 }
 
 
-body{
-
+body {
     background-color: var(--pokeRed);
 }
 
 
-div{
+div {
     display: inline-block;
-
-
 }
 
-figure a{
+figure a {
     text-decoration: none;
     color: var(--pokeBlu);
     font-weight: bold;
 }
 
-figure a:hover{
+figure a:hover {
     color: red;
-}   
+}
 
-.pokemon{
+.pokemon {
     padding-right: 40px;
     margin-left: 50px;
 }
 
-.spinner{
+.spinner {
     width: 100%
 }
 
 
-.hidden{
+.hidden {
     display: none;
 }

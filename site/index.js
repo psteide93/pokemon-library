@@ -39,36 +39,3 @@ fetch(url)
 function pokeNameUpperCase(name){
     return name.charAt(0).toUpperCase() + name.slice(1)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function addPokemonImage(pokemon) {
-//     const div = documenet.createElement("div")
-//     div.innerHTML = `
-//     <a href = "pokemon.html?pokemon=${pokemon.name}">
-//         <img src = "${pokemon.sprites.front_default}" alt = ${pokemon.name}" />
-//     </a>
-//     `
-//     pokemon.append(div)
-// }
